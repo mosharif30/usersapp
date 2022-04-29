@@ -29,7 +29,6 @@ class Login extends Component {
       this.setState({ errors: [] });
       return result;
     } catch (error) {
-      console.log(error.errors);
       this.setState({ errors: error.errors });
     }
   };
@@ -37,7 +36,6 @@ class Login extends Component {
     e.preventDefault();
 
     const result = await this.validate();
-    console.log(result);
 
     if (result) {
       try {
@@ -50,7 +48,6 @@ class Login extends Component {
         this.setState({ logged: true });
         this.setState({ sending: false });
 
-        console.log(response);
         window.location = "/dashboard";
       } catch (error) {
         this.setState({ sending: false });
@@ -72,12 +69,10 @@ class Login extends Component {
         <Layout>
           {this.state.errors.length !== 0 ? (
             <ul>
-              {this.state.errors.map((e, i) => (
+              {this.state.errors.map((e) => (
                 <div className="alert alert-danger d-flex justify-content-end">
                   {" "}
-                  <li className="me-5 d-flex align-items-end" key={i}>
-                    {e}
-                  </li>
+                  <li className="me-5 d-flex align-items-end">{e}</li>
                 </div>
               ))}
             </ul>
@@ -105,8 +100,8 @@ class Login extends Component {
                     type="password"
                   ></Input>
                   {this.state.sending ? (
-                    <div class="spinner-border text-primary" role="status">
-                      <span class="visually-hidden">Loading...</span>
+                    <div className="spinner-border text-primary" role="status">
+                      <span className="visually-hidden">Loading...</span>
                     </div>
                   ) : (
                     <button className="btn btn-primary">Submit</button>

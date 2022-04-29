@@ -10,7 +10,7 @@ import NotFound from "./components/notFound";
 import Dashboard from "./components/dashboard";
 import Navbar from "./components/navbar";
 import LogOut from "./components/logOut";
-import ProtectedRoutes from "./components/protect";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 class App extends Component {
   state = { user: null };

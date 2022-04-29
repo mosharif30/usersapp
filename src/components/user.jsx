@@ -12,8 +12,6 @@ const User = () => {
   let location = useLocation();
 
   useEffect(() => {
-    console.log(querystring.parse(location.search));
-
     (async () => {
       const response = await axios.get(
         `https://reqres.in/api/users/${params.id}`
@@ -27,8 +25,8 @@ const User = () => {
   return (
     <>
       <Layout>
-        <div class="table-responsive ">
-          <table class="table table-Light table-striped table-hover">
+        <div className="table-responsive ">
+          <table className="table table-Light table-striped table-hover">
             <thead className="table-dark">
               <tr>
                 <th scope="col">id</th>
@@ -43,7 +41,11 @@ const User = () => {
               <tr>
                 <th scope="row">{user.id}</th>
                 <td>
-                  <img class=" w-25" src={user.avatar} alt="Card image cap" />
+                  <img
+                    className=" w-25"
+                    src={user.avatar}
+                    alt="Card image cap"
+                  />
                 </td>
                 <td>{user.first_name}</td>
                 <td>{user.last_name}</td>

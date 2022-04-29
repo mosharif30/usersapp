@@ -20,51 +20,54 @@ class Users extends Component {
       <>
         <Layout>
           {" "}
-          <div class="container-fluid">
+          <div className="container-fluid">
             <button
               onClick={this.handleCreate}
-              class="btn btn-primary w-100 mt-3"
+              className="btn btn-primary w-100 mt-3"
               type="button"
             >
               Add user
             </button>
-            <div class="  row justify-content-center ">
+            <div className="  row justify-content-center ">
               {this.state.isLoading ? (
                 <LoadingUsers
                   countofpersons={this.state.users.length}
                 ></LoadingUsers>
               ) : (
-                this.state.users.map((user) => {
+                this.state.users.map((user, i) => {
                   return (
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-12 mt-3 card-group border-0 ">
-                      <div class="card">
+                    <div
+                      key={i}
+                      className="col-lg-2 col-md-3 col-sm-4 col-12 mt-3 card-group border-0 "
+                    >
+                      <div className="card">
                         <img
-                          class="card-img-top rounded-circle"
+                          className="card-img-top rounded-circle"
                           src={user.avatar}
                           alt="Card image cap"
                         />
-                        <div class="card-body">
+                        <div className="card-body">
                           <Link to={`/users/${user.id}`}>
                             {" "}
-                            <h4 class="">
+                            <h4 className="">
                               {user.first_name} {user.last_name}
                             </h4>
                           </Link>
 
                           <small>{user.email}</small>
                         </div>
-                        <div class="card-footer d-flex justify-content-around p-1">
+                        <div className="card-footer d-flex justify-content-around p-1">
                           <button
                             onClick={this.handleUpdate}
                             type="button"
-                            class="btn btn-info "
+                            className="btn btn-info "
                           >
                             Edit
                           </button>
                           <button
                             onClick={this.handleDelete}
                             type="button"
-                            class="btn btn-danger "
+                            className="btn btn-danger "
                           >
                             Delete
                           </button>

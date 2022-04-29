@@ -5,10 +5,10 @@ const Navbar = (props) => {
   return (
     <>
       {" "}
-      <nav class="navbar  navbar-light bg-light">
-        <div class="container-fluid">
-          <ul class="navbar-nav me-auto mb-2 d-flex flex-row p-2">
-            <li class="nav-item p-2">
+      <nav className="navbar  navbar-light bg-light">
+        <div className="container-fluid">
+          <ul className="navbar-nav me-auto mb-2 d-flex flex-row p-2">
+            <li className="nav-item p-2">
               <NavLink
                 style={({ isActive }) => {
                   return { color: isActive ? "#2c3e50" : "#7f8c8d" };
@@ -18,7 +18,7 @@ const Navbar = (props) => {
                 home
               </NavLink>
             </li>
-            <li class="nav-item p-2">
+            <li className="nav-item p-2">
               <NavLink
                 style={({ isActive }) => {
                   return { color: isActive ? "#2c3e50" : "#7f8c8d" };
@@ -31,7 +31,7 @@ const Navbar = (props) => {
             {props.user ? (
               <>
                 {" "}
-                <li class="nav-item p-2">
+                <li className="nav-item p-2">
                   <NavLink
                     style={({ isActive }) => {
                       return { color: isActive ? "#2c3e50" : "#7f8c8d" };
@@ -41,7 +41,7 @@ const Navbar = (props) => {
                     dashboard
                   </NavLink>
                 </li>
-                <li class="nav-item p-2">
+                <li className="nav-item p-2">
                   <NavLink
                     style={({ isActive }) => {
                       return { color: isActive ? "#2c3e50" : "#7f8c8d" };
@@ -55,7 +55,7 @@ const Navbar = (props) => {
             ) : (
               <>
                 {" "}
-                <li class="nav-item p-2">
+                <li className="nav-item p-2">
                   <NavLink
                     style={({ isActive }) => {
                       return { color: isActive ? "#2c3e50" : "#7f8c8d" };
@@ -65,7 +65,7 @@ const Navbar = (props) => {
                     login
                   </NavLink>
                 </li>
-                <li class="nav-item p-2">
+                <li className="nav-item p-2">
                   <NavLink
                     style={({ isActive }) => {
                       return { color: isActive ? "#2c3e50" : "#7f8c8d" };
